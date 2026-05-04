@@ -1,0 +1,24 @@
+.introContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    gap: 20px;
+    font-size: 25px;
+}
+
+button{
+    border: 2px solid rgb(77, 77, 77);
+    background-color: rgb(112, 172, 250);
+    padding-inline: 5vh;
+    padding-block: 1vh;
+    border-radius: 25px;
+    font-size: large;
+}
+
+button:hover{
+    background-color: rgb(50, 118, 227);
+    color:white;
+    padding-inline: 6vh;
+}
