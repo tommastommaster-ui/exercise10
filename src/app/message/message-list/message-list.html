@@ -1,1 +1,18 @@
-<p>message-list works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+</head>
+
+<body>
+    <div *ngFor="let msg of messages" class="Senders" [ngClass]="msg.isMe ? 'left' : 'right'">
+        <strong>{{ msg.sender }}:</strong><p class="message">{{ msg.content }}</p>
+
+
+    </div>
+</body>
+
+</html>
