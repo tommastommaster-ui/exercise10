@@ -11,7 +11,6 @@
     <div *ngFor="let msg of messages" class="Senders" [ngClass]="msg.isMe ? 'left' : 'right'">
         <strong>{{ msg.sender }}:</strong><p class="message">{{ msg.content }}</p>
 
-
     </div>
 </body>
 
