@@ -1,1 +1,22 @@
-<p>conversation works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+</head>
+
+<div *ngIf="isLoading()">
+  Loading...
+</div>
+
+<div *ngIf="errorMes()">
+  {{ errorMes() }}
+</div>
+
+<div *ngFor="let msg of messages()" class="Senders" [ngClass]="msg.sender_id == loginApi.userId() ? 'left' : 'right'">
+    <p class="message">{{ msg.message }}</p>
+</div>
+
+</html>

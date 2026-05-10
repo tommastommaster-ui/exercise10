@@ -12,13 +12,13 @@ import { Router } from '@angular/router';
 })
 export class Login {
   private router = inject(Router);
-  private login = inject(LoginApi);
+  private loginApi = inject(LoginApi);
   
   username = '';
   password = '';
 
   async onSubmit(){
-    const success = await this.login.login(
+    const success = await this.loginApi.login(
       this.username,
       this.password
     );

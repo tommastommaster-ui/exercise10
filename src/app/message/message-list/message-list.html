@@ -1,17 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages</title>
-</head>
-
-<body>
-    <div *ngFor="let msg of messages" class="Senders" [ngClass]="msg.isMe ? 'left' : 'right'">
-        <strong>{{ msg.sender }}:</strong><p class="message">{{ msg.content }}</p>
-
+<div class="container">
+    <div class="sidebar">
+        <ul>
+            <li *ngFor="let user of contacts()" (click)="loadConversation(user)"
+                [class.active]="receiverId()?.id === user.id">
+                {{ user.name }}
+            </li>
+        </ul>
     </div>
-</body>
 
-</html>
+    <div class="chat">
+        <div *ngIf="isLoading()">
+            Loading...
+        </div>
+
+        <div *ngIf="errorMes()">
+            {{ errorMes() }}
+        </div>
+
+        <div *ngFor="let msg of messages()" class="Senders"
+            [ngClass]="msg.sender_id == loginApi.userId() ? 'left' : 'right'">
+            <p class="message">{{ msg.message }}</p>
+        </div>
+    </div>
+</div>
