@@ -2,7 +2,7 @@
     <div class="sidebar">
         <ul>
             <li *ngFor="let user of contacts()" (click)="loadConversation(user)"
-                [class.active]="receiverId()?.id === user.id">
+                [class.active]="receiverId === user.id">
                 {{ user.name }}
             </li>
         </ul>
@@ -20,6 +20,11 @@
         <div *ngFor="let msg of messages()" class="Senders"
             [ngClass]="msg.sender_id == loginApi.userId() ? 'left' : 'right'">
             <p class="message">{{ msg.message }}</p>
+        </div>
+
+        <div class="input">
+            <input type="text" [(ngModel)]="newMessage" >
+            <button (click)="sendMessage()">submit</button>
         </div>
     </div>
 </div>
